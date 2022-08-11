@@ -1,6 +1,6 @@
 targetScope = 'subscription'
 
-param hubVnetName string = 'shadownet'
+param hubVnetName string = 'hubnet'
 param hubResourceGroupName string = 'rg-hub-${deployment().name}'
 param hubVnetCidr string = '10.101.0.0/16'
 param testVmSubnetName string = 'testvm-subnet'
@@ -13,7 +13,7 @@ param computeVnetCidr string = '10.100.0.0/16'
 param aksClusterName string = 'shadowkube'
 // TODO: Lookup by name instead of using OID
 // param aksClusterAdminGroupName string = '${aksClusterName}-admins'
-param k8sVersion string = '1.20.9'
+param k8sVersion string = '1.23.5'
 
 param aksSystemNodePoolName string = 'system'
 param aksSystemNodePoolCount int = 3
