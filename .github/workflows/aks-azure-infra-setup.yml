@@ -33,7 +33,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: aks/baseline
 
     steps:
       - name: Checkout repository
@@ -47,5 +46,5 @@ jobs:
       - name: Run bicep infrastucture as code
         if: success()
         run: |
-          az deployment sub create -f bicep//main.bicep -l ${{ env.azure_region }} -n ${{ env.az_deployment_name }} --parameters computeResourceGroupName=${{ env.az_resourcegroup_name }} hubResourceGroupName=${{ env.az_testresourcegroup_name }} \ 
+          az deployment sub create -f bicep//main.bicep -l ${{ env.azure_region }} -n ${{ env.az_deployment_name }} --parameters computeResourceGroupName=${{ env.az_resourcegroup_name }} hubResourceGroupName=${{ env.az_testresourcegroup_name }}
           aksClusterName=${{ env.az_akscluster_name }} aksGeneralNodePoolCount=${{env.az_aksnodepool_count}} aksGeneralNodePoolVmSku=${{env.az_aksnodepool_vmsku}} aksGeneralNodePoolAutoScale=${{env.az_aksnodepool_autoscale}} aksGeneralNodePoolMinCount=${{env.az_aksnodepool_minCount}} aksGeneralNodePoolMaxCount=${{env.az_aksnodepool_maxCount}} acrName=${{env.az_acr_name}}
