@@ -10,12 +10,12 @@ on:
 env:
   azure_region: eastasia
   # All Azure resource names are derived from below deployment name
-  az_deployment_name: perf-aks-001
-  az_resourcegroup_name: rg-perf-aks-001
-  az_acr_name: aks1acrperf001
+  az_deployment_name: demo-aks-001
+  az_resourcegroup_name: rg-demo-aks-001
+  az_acr_name: acrperf001
   # Azure AKS general user node setting
   az_akscluster_name: aks-perf-001
-  az_aksversion_name: 1.22
+  az_aksversion_name: 1.23.5
   az_aksnodepool_count: 5
   az_aksnodepool_vmsku: Standard_DS2_v2
   az_aksnodepool_autoscale: false 
@@ -23,9 +23,7 @@ env:
   az_aksnodepool_maxCount: 5  
   # test vm configuratiopns
   az_testresourcegroup_name: rg-perf-test-001
-  az_testvm_name: vm-perf-aks-001
-  az_testvm_username: testvmuser
-  az_testvm_size: Standard_F16s_v2      
+     
 
 jobs:
   setup-up-azure-infra:
