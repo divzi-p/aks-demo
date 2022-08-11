@@ -6,11 +6,11 @@ param hubVnetCidr string = '10.101.0.0/16'
 param testVmSubnetName string = 'testvm-subnet'
 param testVmSubnetCidr string = '10.101.0.0/24'
 
-param computeVnetName string = 'shadownet-compute'
+param computeVnetName string = 'spokenet-compute'
 param computeResourceGroupName string = 'rg-compute-${deployment().name}'
 param computeVnetCidr string = '10.100.0.0/16'
 
-param aksClusterName string = 'shadowkube'
+param aksClusterName string = 'demokube'
 // TODO: Lookup by name instead of using OID
 // param aksClusterAdminGroupName string = '${aksClusterName}-admins'
 param k8sVersion string = '1.23.5'
