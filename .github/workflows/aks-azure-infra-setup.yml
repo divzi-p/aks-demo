@@ -12,17 +12,17 @@ env:
   # All Azure resource names are derived from below deployment name
   az_deployment_name: demo-aks-001
   az_resourcegroup_name: rg-demo-aks-001
-  az_acr_name: acrperf001
+  az_acr_name: acrdemo001
   # Azure AKS general user node setting
-  az_akscluster_name: aks-perf-001
+  az_akscluster_name: aks-demo-001
   az_aksversion_name: 1.23.5
-  az_aksnodepool_count: 5
+  az_aksnodepool_count: 2
   az_aksnodepool_vmsku: Standard_DS2_v2
   az_aksnodepool_autoscale: false 
-  az_aksnodepool_minCount: 5 
-  az_aksnodepool_maxCount: 5  
+  az_aksnodepool_minCount: 1 
+  az_aksnodepool_maxCount: 2  
   # test vm configuratiopns
-  az_testresourcegroup_name: rg-perf-test-001
+  az_testresourcegroup_name: rg-demo-test-001
      
 
 jobs:
@@ -44,5 +44,4 @@ jobs:
       - name: Run bicep infrastucture as code
         if: success()
         run: |
-          az deployment sub create -f bicep//main.bicep -l ${{ env.azure_region }} -n ${{ env.az_deployment_name }} --parameters computeResourceGroupName=${{ env.az_resourcegroup_name }} hubResourceGroupName=${{ env.az_testresourcegroup_name }}
-          aksClusterName=${{ env.az_akscluster_name }} aksGeneralNodePoolCount=${{env.az_aksnodepool_count}} aksGeneralNodePoolVmSku=${{env.az_aksnodepool_vmsku}} aksGeneralNodePoolAutoScale=${{env.az_aksnodepool_autoscale}} aksGeneralNodePoolMinCount=${{env.az_aksnodepool_minCount}} aksGeneralNodePoolMaxCount=${{env.az_aksnodepool_maxCount}} acrName=${{env.az_acr_name}}
+          az deployment sub create -f bicep//main.bicep -l ${{ env.azure_region }} -n ${{ env.az_deployment_name }} --parameters computeResourceGroupName=${{ env.az_resourcegroup_name }} hubResourceGroupName=${{ env.az_testresourcegroup_name }} aksClusterName=${{ env.az_akscluster_name }} aksGeneralNodePoolCount=${{env.az_aksnodepool_count}} aksGeneralNodePoolVmSku=${{env.az_aksnodepool_vmsku}} aksGeneralNodePoolAutoScale=${{env.az_aksnodepool_autoscale}} aksGeneralNodePoolMinCount=${{env.az_aksnodepool_minCount}} aksGeneralNodePoolMaxCount=${{env.az_aksnodepool_maxCount}} acrName=${{env.az_acr_name}}
