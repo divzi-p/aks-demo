@@ -98,6 +98,9 @@ module hubVnet 'modules/vnet-hub.bicep' = {
 module hubPeering 'modules/vnet-peering-hub.bicep' = {
   name: '${deployment().name}-hubPeering'
   scope: resourceGroup(hubResourceGroupName)
+  dependsOn: [
+    hubVnet
+  ]
   params: {
     hubVnetName: hubVnetName
     computeVnetId: computeVnet.outputs.computeVnetId
