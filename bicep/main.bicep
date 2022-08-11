@@ -37,13 +37,8 @@ param aksGeneralNodePoolMinCount int =3
 param aksGeneralNodePoolMaxCount int =6
 
 // test vm parameters
-param testVMName string = 'vm-${deployment().name}'
-param testVMSize string ='Standard_D4s_v3'
-param vmAdminUsername string = 'testvmuser'
-param vmAuthenticationType string ='sshPublicKey'
-param vmUbuntuOSVersion string = '18.04-LTS'
 param testVmSubnetNSG string = 'testVmSubnetNsg'
-param testVmPasswordOrKey string
+
 
 //acr parameters
 param acrName string='acrperftest'
@@ -149,24 +144,6 @@ module aks 'modules/aks.bicep' = {
   }
 }
 
-module vmtest 'modules/vm-test.bicep' = {
-  name: '${deployment().name}-vm'
-  scope: resourceGroup(hubResourceGroupName)
-  dependsOn: [
-    hubVnet
-  ]
-  params: {
-    location: deployment().location
-    vmName: testVMName
-    adminUsername: vmAdminUsername
-    vmVnetName: hubVnetName
-    authenticationType:vmAuthenticationType
-    adminPasswordOrKey: testVmPasswordOrKey
-    ubuntuOSVersion: vmUbuntuOSVersion
-    vmSize: testVMSize
-    subnetName:testVmSubnetName
-  }
-}
 
 module acr 'modules/acr.bicep' = {
   name: '${deployment().name}-acr'

@@ -47,6 +47,5 @@ jobs:
       - name: Run bicep infrastucture as code
         if: success()
         run: |
-          az deployment sub create -f bicep//main.bicep -l ${{ env.azure_region }} -n ${{ env.az_deployment_name }} --parameters testVmPasswordOrKey=${{ secrets.test_vm_public_key }} computeResourceGroupName=${{ env.az_resourcegroup_name }} hubResourceGroupName=${{ env.az_testresourcegroup_name }} \
-          testVMName=${{ env.az_testvm_name }} vmAdminUsername=${{ env.az_testvm_username }} testVMSize=${{ env.az_testvm_size }} \
+          az deployment sub create -f bicep//main.bicep -l ${{ env.azure_region }} -n ${{ env.az_deployment_name }} --parameters computeResourceGroupName=${{ env.az_resourcegroup_name }} hubResourceGroupName=${{ env.az_testresourcegroup_name }} \ 
           aksClusterName=${{ env.az_akscluster_name }} aksGeneralNodePoolCount=${{env.az_aksnodepool_count}} aksGeneralNodePoolVmSku=${{env.az_aksnodepool_vmsku}} aksGeneralNodePoolAutoScale=${{env.az_aksnodepool_autoscale}} aksGeneralNodePoolMinCount=${{env.az_aksnodepool_minCount}} aksGeneralNodePoolMaxCount=${{env.az_aksnodepool_maxCount}} acrName=${{env.az_acr_name}}
