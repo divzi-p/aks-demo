@@ -17,13 +17,16 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ "master" ]
-  schedule:
-    - cron: '20 17 * * 6'
+
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: NetCoreBaseline
 
     steps:
     - uses: actions/checkout@v3
