@@ -39,7 +39,7 @@ env:
   RESOURCE_GROUP: "rg-demo-aks-001"
   CLUSTER_NAME: "aks-demo-001"
   IMAGE_PULL_SECRET_NAME: "aksdemosecret001"
-  DEPLOYMENT_MANIFEST_PATH: 'manifests'
+  DEPLOYMENT_MANIFEST_PATH: 'NetCoreBaseline/manifests'
 
 jobs:
   buildImage:
