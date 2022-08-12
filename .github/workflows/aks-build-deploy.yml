@@ -28,18 +28,18 @@
 name: Build and deploy an app to AKS
 
 on:
-  push:
-    branches:
-      - "master"
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "master" ]
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY: "your-azure-container-registry"
-  CONTAINER_NAME: "your-container-name"
-  RESOURCE_GROUP: "your-resource-group"
-  CLUSTER_NAME: "your-cluster-name"
-  IMAGE_PULL_SECRET_NAME: "your-image-pull-secret-name"
-  DEPLOYMENT_MANIFEST_PATH: 'your-deployment-manifest-path'
+  AZURE_CONTAINER_REGISTRY: "acregdemo001"
+  CONTAINER_NAME: "NetCoreBaseline"
+  RESOURCE_GROUP: "rg-demo-aks-001"
+  CLUSTER_NAME: "aks-demo-001"
+  IMAGE_PULL_SECRET_NAME: "aksdemosecret001"
+  DEPLOYMENT_MANIFEST_PATH: 'manifests'
 
 jobs:
   buildImage:
