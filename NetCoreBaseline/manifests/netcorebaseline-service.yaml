@@ -5,14 +5,12 @@ metadata:
   namespace: default
   labels:
     app: perf-netcorebaseline
-  annotations:
-    service.beta.kubernetes.io/azure-load-balancer-internal: "false"
 spec:
   selector:
     app: perf-netcorebaseline
   type: LoadBalancer
   ports:
   - name: http
-    port: 5001
+    port: 5000
     targetPort: http
     protocol: TCP
