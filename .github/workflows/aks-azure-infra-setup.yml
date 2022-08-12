@@ -12,7 +12,7 @@ env:
   # All Azure resource names are derived from below deployment name
   az_deployment_name: demo-aks-001
   az_resourcegroup_name: rg-demo-aks-001
-  az_acr_name: acrdemo001
+  az_acr_name: acregdemo001
   # Azure AKS general user node setting
   az_akscluster_name: aks-demo-001
   az_aksversion_name: 1.23.5
