@@ -47,6 +47,10 @@ jobs:
       contents: read
       id-token: write
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: NetCoreBaseline
     steps:
     # Checks out the repository this file is in
     - uses: actions/checkout@v3
