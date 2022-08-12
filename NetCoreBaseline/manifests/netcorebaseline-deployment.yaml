@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: perf-netcorebaseline
-  namespace: perf
+  namespace: default
   labels:
     app: perf-netcorebaseline
 spec:

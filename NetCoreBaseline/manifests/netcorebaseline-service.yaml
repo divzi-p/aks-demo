@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: perf-netcorebaseline
-  namespace: perf
+  namespace: default
   labels:
     app: perf-netcorebaseline
   annotations:
