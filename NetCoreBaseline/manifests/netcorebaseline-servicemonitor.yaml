@@ -41,7 +41,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: perf-netcorebaseline
-  namespace: monitoring
+  namespace: default
 spec:
   namespaceSelector:
     matchNames:
