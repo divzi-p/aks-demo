@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: perf-netcorebaseline
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
@@ -20,11 +20,11 @@ spec:
         image: acregdemo001.azurecr.io/netcorebaseline:latest
         resources:
           requests:
-            cpu: 2000m
-            memory: 300Mi
+            cpu: 1000m
+            memory: 150Mi
           limits:
-            cpu: 2000m
-            memory: 300Mi
+            cpu: 1000m
+            memory: 150Mi
         # livenessProbe:
         #   tcpSocket:
         #     port: 80
