@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: perf-netcorebaseline
-        image: aks1acrperf001.azurecr.io/perf-netcorebaseline:latest
+        image: acregdemo001.azurecr.io/netcorebaseline:latest
         resources:
           requests:
             cpu: 2000m
@@ -46,5 +46,5 @@ spec:
         - containerPort: 5000
           name: http
       imagePullSecrets:
-      - name: sec-aksperf-acr
+      - name: aksdemosecret001
       restartPolicy: Always
