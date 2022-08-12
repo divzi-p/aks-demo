@@ -27,7 +27,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: prometheus-k8s
-  namespace: perf
+  namespace: default
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -45,7 +45,7 @@ metadata:
 spec:
   namespaceSelector:
     matchNames:
-    - perf
+    - default
   selector:
     matchLabels:
       app: perf-netcorebaseline
