@@ -28,7 +28,7 @@
 name: Build and deploy an app to AKS
 
 on:
-  pull_request:
+  push:
     # The branches below must be a subset of the branches above
     branches: [ "master" ]
   workflow_dispatch:
