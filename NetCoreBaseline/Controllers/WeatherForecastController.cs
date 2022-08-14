@@ -13,7 +13,7 @@ namespace NetCoreBaseline.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "Freezingc", "Bracingc", "Chillyc", "Coolc", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Freezingcc", "Bracingcc", "Chillycc", "Coolcc", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
