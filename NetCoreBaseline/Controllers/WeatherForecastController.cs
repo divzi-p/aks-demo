@@ -32,7 +32,7 @@ namespace NetCoreBaseline.Controllers
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)],
-                Location="Asia"
+                Location="India"
             })
             .ToArray();
         }
